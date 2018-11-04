@@ -1,28 +1,15 @@
 import React, {Component} from 'react';
+import Mention from '../Common/Mention.jsx'
 import PropTypes from 'prop-types';
 
 class MentionCard extends Component {
   render() {
     return (<section className="mention-box text inverted">
       <section className="mention-heading">
-        <b>{this.props.mention.mentioner}</b>
+        <b>{Mention.nameFromMentionString(this.props.mention.mentioner)}</b>
       </section>
-      <section>{this.getJSXForLine()}</section>
+      <section>{Mention.convertMentionsToJSX(this.props.mention.line)}</section>
     </section>);
-  }
-
-  getJSXForLine() {
-    let mentionsInLine = this.props.mention.line.match(/@\w+/g);
-    //Get snippets surrounding mentions
-    let snippets = this.props.mention.line.split(/@\w+/g);
-
-    //Start with first snippet (ie before first mention, then push each formatted mention into the array followed by the next snippet)
-    let result = [snippets.shift()];
-    mentionsInLine.forEach((mention, index) => {
-      result.push(<b key={`mention[${index}]`} className="mention">{mention}</b>);
-      result.push(snippets.shift());
-    });
-    return result;
   }
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Tag from './Tag.jsx'
-
+import Mention from '../Common/Mention.jsx'
 class NotePanel extends Component {
 
   constructor(props) {
@@ -30,7 +30,7 @@ class NotePanel extends Component {
 
   }
   prepareContent(content) {
-    return {__html: content};
+    return {__html: Mention.convertMentionsToHtml(content)};
   }
 
   render() {
