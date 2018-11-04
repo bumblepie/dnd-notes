@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class MentionCard extends Component {
   render() {
     return (<section className="mention-box text inverted">
       <section className="mention-heading">
-        <b>{this.props.mentioner}</b>
+        <b>{this.props.mention.mentioner}</b>
       </section>
       <section>{this.getJSXForLine()}</section>
     </section>);
   }
 
   getJSXForLine() {
-    let mentionsInLine = this.props.line.match(/@\w+/g);
+    let mentionsInLine = this.props.mention.line.match(/@\w+/g);
     //Get snippets surrounding mentions
-    let snippets = this.props.line.split(/@\w+/g);
+    let snippets = this.props.mention.line.split(/@\w+/g);
 
     //Start with first snippet (ie before first mention, then push each formatted mention into the array followed by the next snippet)
     let result = [snippets.shift()];
@@ -23,6 +24,13 @@ class MentionCard extends Component {
     });
     return result;
   }
+}
+
+MentionCard.propTypes = {
+    mention: PropTypes.shape({
+      mentioner: PropTypes.string,
+      line: PropTypes.string,
+    })
 }
 
 export default MentionCard;
