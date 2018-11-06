@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
+import './Mention.css';
 
 class Mention extends Component {
   static convertMentionsToJSX(stringContainingMentions) {

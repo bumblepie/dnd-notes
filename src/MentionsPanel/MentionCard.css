@@ -1,0 +1,9 @@
+.mention-card-heading {
+  margin-bottom: .3em;
+}
+
+.mention-card {
+  border-radius: .25em;
+  padding: .3em;
+  margin: .4em;
+}

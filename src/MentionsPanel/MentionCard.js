@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Mention from '../Common/Mention';
+import './MentionCard.css';
 
 class MentionCard extends PureComponent {
   render() {
