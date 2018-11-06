@@ -1,0 +1,10 @@
+.tag {
+  background-color: var(--accent);
+  color: var(--text-tag);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  display: inline-block;
+  margin: 0.1em;
+  text-align: center;
+  min-width: 1.5em;
+}

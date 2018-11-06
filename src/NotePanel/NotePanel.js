@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Tag from './Tag';
 import Mention from '../Common/Mention';
+import './NotePanel.css';
 
 class NotePanel extends Component {
   static prepareContent(content) {

@@ -28,26 +28,6 @@ body {
   background-color: var(--background-alt);
 }
 
-.tag {
-  background-color: var(--accent);
-  color: var(--text-tag);
-  border-radius: 0.5em;
-  padding: 0.2em;
-  display: inline-block;
-  margin: 0.1em;
-  text-align: center;
-  min-width: 1.5em;
-}
-
-.new-tag {
-  background-color: var(--accent-light);
-}
-
-.content {
-  border-radius: .25em;
-  padding: .5em;
-}
-
 .text {
   background-color: var(--text-normal-background);
   color: var(--text-normal);
@@ -56,45 +36,6 @@ body {
 .text.inverted {
   background-color: var(--text-inverted-background);
   color: var(--text-inverted);
-}
-
-.content-section {
-  margin: 2em;
-}
-
-.mention-section-fixed {
-  position: fixed;
-  height: 100vh;
-}
-
-.mention-div-inner {
-  display: flex;
-  flex-direction: column;
-  max-height: 95%;
-  max-width: 95%;
-  margin: auto auto;
-}
-
-.mention-heading {
-  margin-bottom: .5em;
-}
-
-.mentions-container {
-  overflow-y: auto;
-}
-
-.tags-section {
-  margin: 1em
-}
-
-.mention-box {
-  border-radius: .25em;
-  padding: .3em;
-  margin: .4em;
-}
-
-.mention {
-  color: var(--text-normal-alt);
 }
 
 .button {

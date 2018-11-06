@@ -1,0 +1,30 @@
+.content-section {
+  margin: 2em;
+}
+
+.content {
+  border-radius: .25em;
+  padding: .5em;
+}
+
+.tags-section {
+  margin: 1em
+}
+
+/*TODO: remove this when we make the new tag button properly -
+ *      it should be its own component rather than a simple span
+ */
+.tag {
+  background-color: var(--accent);
+  color: var(--text-tag);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  display: inline-block;
+  margin: 0.1em;
+  text-align: center;
+  min-width: 1.5em;
+}
+
+.new-tag {
+  background-color: var(--accent-light);
+}

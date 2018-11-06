@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MentionCard from './MentionCard';
+import './MentionsPanel.css';
 
 class MentionsPanel extends Component {
   constructor(props) {

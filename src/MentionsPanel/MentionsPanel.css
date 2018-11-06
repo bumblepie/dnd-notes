@@ -1,0 +1,16 @@
+.mention-panel-fixed {
+  position: fixed;
+  height: 100vh;
+}
+
+.mention-panel-inner-div {
+  display: flex;
+  flex-direction: column;
+  max-height: 95%;
+  max-width: 95%;
+  margin: auto auto;
+}
+
+.mention-cards-container {
+  overflow-y: auto;
+}

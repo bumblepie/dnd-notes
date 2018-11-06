@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Tag.css';
 
 class Tag extends Component {
   displayValue() {
