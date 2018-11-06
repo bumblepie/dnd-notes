@@ -1,16 +1,20 @@
-import React, {Component} from 'react';
-import Tag from './Tag.jsx'
-import Mention from '../Common/Mention.jsx'
+import React, { Component } from 'react';
+import Tag from './Tag';
+import Mention from '../Common/Mention';
+
 class NotePanel extends Component {
+  static prepareContent(content) {
+    return { __html: Mention.convertMentionsToHtml(content) };
+  }
 
   constructor(props) {
     super(props);
     this.state = {
       tags: [
-        {name: 'Human'},
-        {name: 'Female'},
-        {name: 'Occupation', value: 'Crimelord'},
-        {name: 'Age', value: '32'}
+        { name: 'Human' },
+        { name: 'Female' },
+        { name: 'Occupation', value: 'Crimelord' },
+        { name: 'Age', value: '32' },
       ],
 
       content: `<h3>The Baroness</h3>
@@ -24,29 +28,31 @@ class NotePanel extends Component {
 <p>Sed pellentesque facilisis mauris vel sagittis. Quisque tempor nulla in mauris volutpat, ornare tincidunt nulla elementum. Vestibulum efficitur ullamcorper felis, vitae gravida lectus egestas non. Integer quis est ac felis malesuada faucibus. Donec congue, dui vitae sollicitudin laoreet, purus nulla feugiat purus, at faucibus tortor purus vel massa. Quisque ullamcorper elit pharetra lectus blandit cursus. Quisque sit amet fringilla metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sodales ante, vel lacinia nisl. Sed euismod porttitor erat, quis bibendum mauris porta non. Ut vel maximus turpis. Fusce aliquet, lorem ut dictum interdum, diam sapien ornare elit, sit amet egestas tortor eros vitae nisi. Fusce a pharetra augue.
 </p>
 
-<p>In gravida vestibulum libero eu mattis. Etiam sed odio purus. Donec eget tortor a magna facilisis dignissim. Sed porta in metus vitae accumsan. Phasellus in fermentum lacus. Pellentesque non orci diam. Nunc nec nunc lobortis, iaculis augue a, consequat augue. Maecenas id dictum nunc, in rhoncus lacus. Vestibulum scelerisque pharetra orci, et fermentum libero egestas eget.</p>`
-    }
-
-
-  }
-  prepareContent(content) {
-    return {__html: Mention.convertMentionsToHtml(content)};
+<p>In gravida vestibulum libero eu mattis. Etiam sed odio purus. Donec eget tortor a magna facilisis dignissim. Sed porta in metus vitae accumsan. Phasellus in fermentum lacus. Pellentesque non orci diam. Nunc nec nunc lobortis, iaculis augue a, consequat augue. Maecenas id dictum nunc, in rhoncus lacus. Vestibulum scelerisque pharetra orci, et fermentum libero egestas eget.</p>`,
+    };
   }
 
   render() {
-    return (<section className="content-section">
-      <h1 className="title inverted">The Baroness</h1>
-      <section className="tags-section">
-        {
-          this.state.tags.map((tag, index) => {
-            return <Tag key={`tag[${index}]`} tag={tag}></Tag>;
-          })
+    const {
+      tags,
+      content,
+    } = this.state;
+
+    /* eslint-disable react/no-danger */
+    return (
+      <section className="content-section">
+        <h1 className="title inverted">The Baroness</h1>
+        <section className="tags-section">
+          {
+          tags.map(tag => <Tag key={tag.name} tag={tag} />)
         }
-        <span className="tag new-tag">+</span>
+          <button className="button" type="button">ADD TAG</button>
+        </section>
+        <section className="content text" dangerouslySetInnerHTML={NotePanel.prepareContent(content)} />
+        <button className="button" type="button">EDIT</button>
       </section>
-      <section className="content text" dangerouslySetInnerHTML={this.prepareContent(this.state.content)}></section>
-      <button className="button">EDIT</button>
-    </section>);
+    );
+    /* eslint-enable react/no-danger */
   }
 }
 
