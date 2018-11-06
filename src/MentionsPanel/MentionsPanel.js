@@ -25,10 +25,10 @@ class MentionsPanel extends Component {
   render() {
     const { mentions } = this.state;
     return (
-      <section className="mention-section-fixed">
-        <div className="mention-div-inner">
+      <section className="mention-panel-fixed">
+        <div className="mention-panel-inner-div">
           <h2 className="title inverted">Mentioned By</h2>
-          <section className="mentions-container">
+          <section className="mention-cards-container">
             {
             mentions.map(mention => (<MentionCard key={mention} mention={mention} />))
           }
