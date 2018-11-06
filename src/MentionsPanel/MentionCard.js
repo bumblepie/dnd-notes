@@ -13,8 +13,8 @@ class MentionCard extends PureComponent {
     } = this.props;
 
     return (
-      <section className="mention-box text inverted">
-        <section className="mention-heading">
+      <section className="mention-card text inverted">
+        <section className="mention-card-heading">
           <b>{Mention.nameFromMentionString(mentioner)}</b>
         </section>
         <section>{Mention.convertMentionsToJSX(line)}</section>
