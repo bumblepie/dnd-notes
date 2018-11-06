@@ -1,32 +1,114 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background-color: var(--background-super-dark);
+  color: var(--text-inverted);
+  margin: 0px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.title {
+  color: var(--text-normal-title);
 }
 
-.App-header {
-  background-color: #282c34;
+.title.inverted {
+  color: var(--text-inverted-title);
+}
+
+.row {
+  display: flex;
   min-height: 100vh;
+}
+
+.left {
+  flex: 4;
+  background-color: var(--background-dark);
+}
+
+.right {
+  flex: 3;
+  background-color: var(--background-alt);
+}
+
+.tag {
+  background-color: var(--accent);
+  color: var(--text-tag);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  display: inline-block;
+  margin: 0.1em;
+  text-align: center;
+  min-width: 1.5em;
+}
+
+.new-tag {
+  background-color: var(--accent-light);
+}
+
+.content {
+  border-radius: .25em;
+  padding: .5em;
+}
+
+.text {
+  background-color: var(--text-normal-background);
+  color: var(--text-normal);
+}
+
+.text.inverted {
+  background-color: var(--text-inverted-background);
+  color: var(--text-inverted);
+}
+
+.content-section {
+  margin: 2em;
+}
+
+.mention-section-fixed {
+  position: fixed;
+  height: 100vh;
+}
+
+.mention-div-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-height: 95%;
+  max-width: 95%;
+  margin: auto auto;
 }
 
-.App-link {
-  color: #61dafb;
+.mention-heading {
+  margin-bottom: .5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mentions-container {
+  overflow-y: auto;
+}
+
+.tags-section {
+  margin: 1em
+}
+
+.mention-box {
+  border-radius: .25em;
+  padding: .3em;
+  margin: .4em;
+}
+
+.mention {
+  color: var(--text-normal-alt);
+}
+
+.button {
+  color: inherit;
+  background-color: inherit;
+  border-radius: .25em;
+  padding: .3em;
+  margin: .3em;
+}
+
+.button:hover {
+  background-color: var(--accent);
+}
+
+.button:active {
+  background-color: var(--background-super-dark);
 }

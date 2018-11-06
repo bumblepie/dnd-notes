@@ -1,0 +1,16 @@
+:root {
+  --background-super-dark: #293151;
+  --background-dark: #47569B;
+  --background-alt: #3a4574;
+  --accent: #8C759D;
+  --accent-light: #D5B2BE;
+  --text-tag: #F6EDE1;
+  --text-normal-background: #F6EDE1;
+  --text-normal: #293151;
+  --text-normal-title: #47569B;
+  --text-normal-alt: #A87B95;
+  --text-inverted-background: #47569B;
+  --text-inverted-title: #F6EDE1;
+  --text-inverted: #F6EDE1;
+  --text-inverted-alt: #8C759D;
+}
